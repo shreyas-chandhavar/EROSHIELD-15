@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620">
+<style>
+text{font-family:Arial,sans-serif;fill:#222} .title{font-size:28px;font-weight:700}.sub{font-size:15px;fill:#555}.lab{font-size:16px}.val{font-size:15px;font-weight:700}.axis{stroke:#999;stroke-width:1}.bar{fill:#4a5568}.clean{fill:#cbd5e0}
+</style>
+<rect width="1100" height="620" fill="white"/>
+<text x="40" y="48" class="title">EROSHIELD-15 — Rated-point power penalty vs clean</text>
+<text x="40" y="76" class="sub">V2 nominal aerodynamic screening; lower penalty is better. Clean = 0 kW.</text>
+<line x1="300" y1="105" x2="300" y2="570" class="axis"/>
+<line x1="300" y1="570" x2="1030" y2="570" class="axis"/>
+<text x="290" y="595" class="sub">0</text><text x="520" y="595" class="sub">200</text><text x="760" y="595" class="sub">400</text><text x="1000" y="595" class="sub">600 kW</text>
+<text x="40" y="140" class="lab">Clean</text><rect x="300" y="120" width="2" height="28" class="clean"/><text x="315" y="141" class="val">0.0</text>
+<text x="40" y="200" class="lab">Erosion A1</text><rect x="300" y="180" width="63" height="28" class="bar"/><text x="375" y="201" class="val">52.0</text>
+<text x="40" y="260" class="lab">Erosion A2</text><rect x="300" y="240" width="334" height="28" class="bar"/><text x="646" y="261" class="val">274.5</text>
+<text x="40" y="320" class="lab">Erosion B3</text><rect x="300" y="300" width="724" height="28" class="bar"/><text x="1035" y="321" class="val">595.6</text>
+<text x="40" y="380" class="lab">LEP tape analogue</text><rect x="300" y="360" width="30" height="28" class="bar"/><text x="342" y="381" class="val">24.5</text>
+<text x="40" y="440" class="lab">LEP chamfer analogue</text><rect x="300" y="420" width="67" height="28" class="bar"/><text x="379" y="441" class="val">55.0</text>
+<text x="40" y="500" class="lab">LEP step analogue</text><rect x="300" y="480" width="145" height="28" class="bar"/><text x="457" y="501" class="val">118.9</text>
+<text x="40" y="550" class="sub">Penalty derived from the final V2 nominal-window run. These are model outputs, not wind-tunnel measurements.</text>
+</svg>
