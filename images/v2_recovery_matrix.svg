@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1150" height="700" viewBox="0 0 1150 700">
+<style>
+text{font-family:Arial,sans-serif;fill:#222}.title{font-size:28px;font-weight:700}.sub{font-size:15px;fill:#555}.head{font-size:17px;font-weight:700}.cell{font-size:16px}.box{fill:#f7fafc;stroke:#cbd5e0}.yes{fill:#e6fffa;stroke:#4a5568}.no{fill:#fff5f5;stroke:#a0aec0}
+</style>
+<rect width="1150" height="700" fill="white"/>
+<text x="40" y="48" class="title">EROSHIELD-15 — Recovery screening matrix</text>
+<text x="40" y="76" class="sub">Net benefit and recovery relative to each eroded state; ≥80% is shown as passing the screening threshold.</text>
+<text x="310" y="125" class="head">Tape analogue</text><text x="575" y="125" class="head">Chamfer analogue</text><text x="850" y="125" class="head">Step analogue</text>
+<text x="55" y="195" class="head">A1 mild</text>
+<rect x="270" y="150" width="240" height="90" rx="8" class="no"/><text x="295" y="185" class="cell">+27.47 kW</text><text x="295" y="215" class="cell">52.86% — NO</text>
+<rect x="540" y="150" width="240" height="90" rx="8" class="no"/><text x="565" y="185" class="cell">−3.04 kW</text><text x="565" y="215" class="cell">−5.84% — NO</text>
+<rect x="810" y="150" width="240" height="90" rx="8" class="no"/><text x="835" y="185" class="cell">−66.98 kW</text><text x="835" y="215" class="cell">−128.90% — NO</text>
+<text x="55" y="325" class="head">A2 moderate</text>
+<rect x="270" y="280" width="240" height="90" rx="8" class="yes"/><text x="295" y="315" class="cell">+249.97 kW</text><text x="295" y="345" class="cell">91.08% — YES</text>
+<rect x="540" y="280" width="240" height="90" rx="8" class="no"/><text x="565" y="315" class="cell">+219.47 kW</text><text x="565" y="345" class="cell">79.96% — NO</text>
+<rect x="810" y="280" width="240" height="90" rx="8" class="no"/><text x="835" y="315" class="cell">+155.53 kW</text><text x="835" y="345" class="cell">56.67% — NO</text>
+<text x="55" y="455" class="head">B3 severe</text>
+<rect x="270" y="410" width="240" height="90" rx="8" class="yes"/><text x="295" y="445" class="cell">+571.15 kW</text><text x="295" y="475" class="cell">95.89% — YES</text>
+<rect x="540" y="410" width="240" height="90" rx="8" class="yes"/><text x="565" y="445" class="cell">+540.65 kW</text><text x="565" y="475" class="cell">90.77% — YES</text>
+<rect x="810" y="410" width="240" height="90" rx="8" class="yes"/><text x="835" y="445" class="cell">+476.71 kW</text><text x="835" y="475" class="cell">80.03% — YES</text>
+<text x="40" y="560" class="head">Design insight</text>
+<text x="40" y="592" class="cell">Protection can be counterproductive under mild erosion if the installation penalty is too high.</text>
+<text x="40" y="622" class="cell">Under moderate/severe erosion, lower-penalty protection analogues show substantial modeled benefit.</text>
+<text x="40" y="660" class="sub">Analogue screening only; not direct validation of the actual 2 mm EROSHIELD geometry.</text>
+</svg>
