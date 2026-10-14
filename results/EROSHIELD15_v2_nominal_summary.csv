@@ -1,0 +1,8 @@
+Case,Power_MW,Delta_vs_clean_kW
+Clean,16.204000,0.000
+Erosion_A1,16.152040,-51.960
+Erosion_A2,15.929537,-274.463
+Erosion_B3,15.608354,-595.646
+LEP_Tape_Analogue,16.179509,-24.491
+LEP_Chamfer_Analogue,16.149004,-54.996
+LEP_Step_Analogue,16.085062,-118.938
