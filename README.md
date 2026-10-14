@@ -2,8 +2,6 @@
 
 **Preliminary leading-edge erosion protection and aerodynamic trade study for the public IEA 15-MW reference wind turbine**
 
-![EROSHIELD assembly](images/eroshield_outer_blade_assembly.png)
-
 ## Project summary
 
 EROSHIELD-15 explores a removable/conformal leading-edge protection concept for the outer region
@@ -20,11 +18,11 @@ validated commercial LEP design.
 - 9.551 m leading-edge protection concept
 - Nominal shield thickness: ~2 mm
 - Approximate installed shield mass from Rev-A screening: 15.90 kg/blade
-- Rev-A parametric aerodynamic model
+- Rev-A parametric aerodynamic screening
 - Station-specific IEA outer-blade polar model
 - Literature-informed V2 erosion / LEP analogue screening
 - Numerical convergence and induction-clipping audit
-- PLM / ECN documentation
+- Basic PLM / change-control documentation
 
 ## Final aerodynamic screening
 
@@ -64,19 +62,26 @@ outer-blade stations:
 - 21 axial-induction clipping flags
 - 0 tangential-induction clipping flags
 
-The clipping flags are documented as a limitation rather than hidden or treated as validation.
+The clipping flags are retained as a documented numerical limitation rather than hidden or treated
+as validation.
+
+## Reproducibility
+
+The repository includes a compact GNU Octave implementation of the final V2 screening logic:
+
+`analysis/EROSHIELD15_literature_screening_v2.m`
+
+The script uses embedded IEA outer-blade station geometry and automatically downloads the
+station-specific public AeroDyn polar files from the pinned public IEA model release.
 
 ## Repository structure
 
 ```text
 analysis/
   EROSHIELD15_literature_screening_v2.m
-  legacy/EROSHIELD15_revA_parametric_screening.m
 
 data/
-  IEA15_AF45_polar.dat
-  IEA-15-240-RWT_AeroDyn15_blade.dat
-  IEA-15-240-RWT_AF45_Coords.txt
+  README.md
 
 results/
   EROSHIELD15_revA_final_results.csv
@@ -85,15 +90,16 @@ results/
   EROSHIELD15_v2_numerical_audit.txt
 
 docs/
-  source/license record
-  aerodynamic analysis PDF
-  engineering change record PDF
+  DOC-2000_Source_and_License_Record.txt
 
 cad-reference/
-  profile/reference packages and CAD notes
+  README.md
 
-images/
-  selected SolidWorks screenshots
+rejected-cfd/
+  README.md
+
+PROJECT_CLOSEOUT.md
+THIRD_PARTY_NOTICE.md
 ```
 
 ## Historical Rev-A result
@@ -116,6 +122,7 @@ recovery as an output instead of prescribing it.
   qualification, or final structural FEA was completed.
 - Early SU2 CFD was rejected because it failed physical-consistency checks and is not used as
   quantitative evidence.
+- The proposed Phase-12 feathered-termination redesign was not completed before project closeout.
 
 ## Status
 
