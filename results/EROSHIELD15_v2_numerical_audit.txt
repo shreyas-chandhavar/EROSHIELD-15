@@ -1,0 +1,29 @@
+EROSHIELD-15 V2 numerical audit closeout
+
+Executed configuration:
+- Geometry basis: IEA_MASTER
+- Protected physical BlSpn: 100.285656 to 109.836670 m
+- Protected length: 9.551015 m
+- Projected shield radius: 104.001694 to 113.529443 m
+- Projected BEM tip radius: 120.675323 m
+
+Numerical status:
+- Converged solutions: 252 / 252
+- Axial-induction clip flags: 21
+- Tangential-induction clip flags: 0
+- Maximum iterations used: 76 / 200
+- Convergence status: PASS
+- Induction clipping status: REVIEW REQUIRED
+
+Nominal clean-case station AoA [deg]:
+6.9775, 7.0862, 7.1614, 7.1533, 7.0954, 7.0027,
+6.8674, 6.6747, 6.3940, 5.9497, 5.0756, 4.2968
+
+Nominal clean-case station Reynolds numbers:
+1.4875e7, 1.4748e7, 1.4584e7, 1.4380e7, 1.4130e7, 1.3838e7,
+1.3503e7, 1.3125e7, 1.2704e7, 1.2240e7, 1.1721e7, 3.4016e6
+
+Closeout interpretation:
+The model converged for every case/window/station solved. Axial clipping remains a
+documented BEM limitation and was not resolved before project closeout. No claim of
+geometry-specific aerodynamic validation is made.
