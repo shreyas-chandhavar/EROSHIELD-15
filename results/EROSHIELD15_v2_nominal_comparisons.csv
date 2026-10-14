@@ -1,0 +1,10 @@
+Erosion_case,LEP_analogue,Net_benefit_kW,Recovery_percent,Meets_80pct_screen
+Erosion_A1,LEP_Tape_Analogue,27.47,52.86,NO
+Erosion_A1,LEP_Chamfer_Analogue,-3.04,-5.84,NO
+Erosion_A1,LEP_Step_Analogue,-66.98,-128.90,NO
+Erosion_A2,LEP_Tape_Analogue,249.97,91.08,YES
+Erosion_A2,LEP_Chamfer_Analogue,219.47,79.96,NO
+Erosion_A2,LEP_Step_Analogue,155.53,56.67,NO
+Erosion_B3,LEP_Tape_Analogue,571.15,95.89,YES
+Erosion_B3,LEP_Chamfer_Analogue,540.65,90.77,YES
+Erosion_B3,LEP_Step_Analogue,476.71,80.03,YES
