@@ -24,6 +24,20 @@ validated commercial LEP design.
 - Numerical convergence and induction-clipping audit
 - Basic PLM / change-control documentation
 
+## Visual project summary
+
+### Aerodynamic penalty
+
+![Rated-point power penalty](images/v2_power_penalty.svg)
+
+### Recovery trade study
+
+![Recovery screening matrix](images/v2_recovery_matrix.svg)
+
+### PLM / configuration-control traceability
+
+![PLM traceability](images/plm_traceability.svg)
+
 ## Final aerodynamic screening
 
 ### V2 nominal rated-point results
