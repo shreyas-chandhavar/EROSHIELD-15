@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+<style>
+text{font-family:Arial,sans-serif;fill:#1f2937}.t{font-size:28px;font-weight:700}.h{font-size:18px;font-weight:700}.s{font-size:15px;fill:#4b5563}.dim{font-size:16px;font-weight:700}.blade{fill:#e5e7eb;stroke:#374151;stroke-width:3}.shield{fill:#f59e0b;stroke:#92400e;stroke-width:3}.line{stroke:#6b7280;stroke-width:2}.dash{stroke:#6b7280;stroke-width:2;stroke-dasharray:8 8}
+</style>
+<rect width="1200" height="520" fill="white"/>
+<text x="40" y="52" class="t">EROSHIELD-15 concept geometry</text>
+<text x="40" y="82" class="s">Outer-blade protection concept based on the public IEA 15-MW reference turbine.</text>
+<path d="M120,325 C250,145 525,120 820,210 C940,247 1005,300 1060,345 C840,350 520,355 120,325 Z" class="blade"/>
+<path d="M120,325 C185,235 265,188 365,160 C342,184 320,212 300,248 C255,264 205,291 165,326 Z" class="shield"/>
+<line x1="155" y1="390" x2="420" y2="390" class="line"/><line x1="155" y1="382" x2="155" y2="398" class="line"/><line x1="420" y1="382" x2="420" y2="398" class="line"/>
+<text x="208" y="420" class="dim">Protected length: 9.551 m</text>
+<line x1="195" y1="200" x2="195" y2="120" class="dash"/><text x="110" y="112" class="dim">Nominal shield thickness: 2.0 mm</text>
+<line x1="695" y1="155" x2="695" y2="105" class="dash"/><text x="595" y="98" class="dim">Outer-blade installation region</text>
+<text x="875" y="420" class="h">Rev-A screening mass</text><text x="875" y="450" class="dim">15.90 kg / blade</text>
+<text x="875" y="482" class="s">Concept-level estimate including allowance</text>
+</svg>
