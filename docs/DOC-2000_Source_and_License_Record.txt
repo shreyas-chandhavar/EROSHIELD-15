@@ -1,0 +1,53 @@
+DOC-2000 — EROSHIELD-15 Source & License Record
+
+Project:
+EROSHIELD-15 — Leading-Edge Erosion Mitigation, Aerodynamic Recovery & Change-Control Study
+
+Reference model:
+IEA 15-MW Offshore Reference Wind Turbine
+
+Primary public source:
+IEAWindSystems / IEA-15-240-RWT
+GitHub repository:
+https://github.com/IEAWindSystems/IEA-15-240-RWT
+
+Repository license:
+Apache License 2.0
+
+Reference files used in this project:
+1. OpenFAST/IEA-15-240-RWT/IEA-15-240-RWT_AeroDyn15_blade.dat
+   Used for blade spanwise geometry, chord, twist, sweep/curve reference data, and airfoil assignment.
+
+2. OpenFAST/IEA-15-240-RWT/Airfoils/IEA-15-240-RWT_AeroDyn15_Polar_38.dat
+   through
+   OpenFAST/IEA-15-240-RWT/Airfoils/IEA-15-240-RWT_AeroDyn15_Polar_49.dat
+   Used for station-specific outer-blade aerodynamic screening.
+
+3. IEA-15-240-RWT airfoil coordinate files as applicable to the modeled outer-blade stations.
+   Used only as public geometric reference for project CAD reconstruction.
+
+Project-specific work:
+- SolidWorks reconstruction of the selected outer-blade segment.
+- EROSHIELD conformal leading-edge protection concept.
+- Parametric erosion and aerodynamic-recovery screening.
+- Differential BEM rotor-impact analysis.
+- AEP proxy, sensitivity, mass, centrifugal-load, bond-load, and span-placement screening.
+- Engineering change-control / PLM workflow.
+
+Traceability statement:
+Original public reference files are retained as source material and are not presented as original project work. Project-specific CAD, calculations, scripts, design decisions, and derived results are controlled separately.
+
+Important limitations:
+- Erosion severity and aerodynamic-recovery values are parametric screening assumptions.
+- AEP values are screening proxies, not a full wind-speed distribution / power-curve integration.
+- SU2 AF45 CFD results that failed physical-consistency checks were excluded from quantitative conclusions.
+- The project is an independent engineering study and is not affiliated with or endorsed by IEA Wind, NREL, DTU, or other organizations associated with the reference turbine.
+
+Prepared for:
+Shreyas Engineering Projects
+
+Document ID:
+DOC-2000
+
+Status:
+Initial controlled source and license record
