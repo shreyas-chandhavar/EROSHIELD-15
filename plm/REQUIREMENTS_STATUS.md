@@ -1,17 +1,22 @@
 # Requirements Traceability Status
 
-The Rev-A TurboPLM package contained **six approved requirements**. At release:
+The Rev-A TurboPLM package contains **six approved requirements**.
+
+| Requirement | Title | Type | Priority | Status |
+|---|---|---|---|---|
+| REQ-10001 | EROSHIELD Leading-Edge Protection Concept | Functional | High | Approved |
+| REQ-10002 | Modeled Aerodynamic Loss Recovery | Functional | High | Approved |
+| REQ-10003 | Installed Shield Mass Limit | Performance | High | Approved |
+| REQ-10004 | Outer-Blade Protection Coverage | Functional | High | Approved |
+| REQ-10005 | Replaceable Protection Architecture | Functional | Medium | Approved |
+| REQ-10006 | Protection Span Placement Efficiency | Performance | Medium | Approved |
+
+## Release coverage
 
 - Approved requirements: **6**
 - Covered requirements: **6**
 - Uncovered requirements: **0**
 
-The controlled analysis package and CAD objects were linked as concept-screening evidence.
+The controlled CAD objects, assembly, analysis package and change-control records were linked as concept-screening evidence in TurboPLM.
 
-Known early requirement themes included:
-- aerodynamic performance impact;
-- recovery of erosion-induced aerodynamic loss;
-- added mass;
-- geometric / blade-envelope compatibility.
-
-The exact final wording of all six TurboPLM requirement records is not reproduced here because the transferable project files available at GitHub closeout do not contain the full requirement text. The original TurboPLM records remain authoritative; no missing requirement wording is invented in this repository.
+The original TurboPLM database remains the authoritative source for the requirement records and their links.
