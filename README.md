@@ -2,23 +2,17 @@
 
 **Preliminary leading-edge erosion protection and aerodynamic trade study for the public IEA 15-MW reference wind turbine**
 
-![EROSHIELD-15 concept geometry](images/geometry_summary.svg)
+<p align="center">
+  <img src="images/cad_assembly_hero_actual.svg" alt="SolidWorks EROSHIELD-15 assembled outer-blade view" width="820">
+</p>
+
+<p align="center"><i>Actual SolidWorks assembly view: grey IEA 15-MW outer-blade segment with the orange EROSHIELD leading-edge protection component.</i></p>
 
 ## Project objective
 
-EROSHIELD-15 investigates whether a removable / conformal leading-edge protection concept can reduce the aerodynamic penalty associated with outer-blade erosion while keeping added mass and integration effects small enough to remain practical.
+EROSHIELD-15 investigates whether a separately controlled, removable/conformal leading-edge protection concept can reduce the aerodynamic consequences of outer-blade erosion while keeping the protection penalty, added mass, placement and attachment loads within a defensible concept-level envelope.
 
-The work uses the **public IEA 15-MW reference turbine** as the baseline and combines:
-
-- SolidWorks CAD reconstruction and assembly work;
-- GNU Octave differential BEM screening;
-- erosion and protection sensitivity cases;
-- mass, centrifugal-load and attachment screening;
-- span-placement analysis;
-- numerical convergence diagnostics;
-- TurboPLM requirements, eBOM, ECR/ECN and release-baseline control.
-
-This is a **preliminary engineering / concept-screening study**, not a certified LEP product design.
+The study combines **SolidWorks CAD, GNU Octave differential BEM analysis, numerical verification, engineering trade studies and TurboPLM configuration control**. It is intentionally closed at the **preliminary engineering / screening stage** and is not presented as a certified or production-ready LEP system.
 
 ![Engineering workflow](images/project_workflow.svg)
 
@@ -26,93 +20,102 @@ This is a **preliminary engineering / concept-screening study**, not a certified
 
 ## 1. Engineering problem
 
-Leading-edge erosion can reduce lift-to-drag ratio and increase aerodynamic losses in the high-speed outer region of a wind-turbine blade. A protection system can reduce future erosion exposure, but the protection itself can also introduce an aerodynamic penalty through thickness, surface discontinuity and termination geometry.
+Leading-edge erosion can reduce lift-to-drag ratio and increase aerodynamic losses in the high-speed outer region of a wind-turbine blade. However, a protection system is not aerodynamically free: thickness, surface discontinuity and termination geometry can also introduce losses.
 
-The engineering question therefore was not simply:
+The engineering question therefore became:
 
-> “Can a shield protect the blade?”
+> **Can a leading-edge protection concept provide a net benefit once the aerodynamic penalty of the protection itself, added mass, spanwise placement and attachment implications are included?**
 
-It was:
-
-> **Can a protection concept provide a net performance benefit once its own aerodynamic penalty, mass, spanwise placement and attachment implications are included?**
-
-This led to a deliberately trade-based project rather than a single “recovery percentage” claim.
+That distinction drove the project away from a single assumed “recovery percentage” and toward a condition-dependent trade study.
 
 ---
 
-## 2. Controlled geometry and CAD concept
+## 2. Controlled CAD concept
 
-The Rev-A configuration uses the public IEA 15-MW outer-blade region as the reference geometry.
+The Rev-A configuration uses the public **IEA 15-MW reference blade** as the geometric baseline.
 
 | Parameter | Rev-A controlled value |
 |---|---:|
-| Protected physical span | 9.551 m |
-| Nominal shield thickness | 2.0 mm |
+| Protected physical span | **9.551 m** |
+| Nominal shield thickness | **2.0 mm** |
 | CAD thickness check | ~1.98 mm |
-| Controlled outer-blade object | `PRT-1310` |
+| Installed-mass screening estimate | **15.90 kg/blade** |
+| Outer-blade object | `PRT-1310` |
 | Protection component | `PRT-1320` |
 | Assembly | `ASM-1300` |
-| Installed-mass screening estimate | 15.90 kg/blade |
 
-The shield was modeled as a separate conformal component rather than modifying the reference blade directly. This kept the concept removable and made the configuration suitable for assembly-level PLM control.
+The protection was modeled as a **separate component** rather than permanently modifying the reference blade. This supports replaceability, independent revision control and assembly-level configuration management.
 
-### CAD work completed
+![Concept geometry](images/geometry_summary.svg)
 
-- reconstructed outer-blade reference segment;
-- generated the conformal leading-edge protection component;
-- created the outer-blade assembly;
-- checked alignment and mating of the shield to the blade segment;
-- performed interference / coincidence review;
-- retained the shield as a separately controlled component.
+### SolidWorks work completed
 
-The proposed later **Phase-12 feathered-termination redesign was not completed** before project closeout, so the released Rev-A concept remains the final controlled CAD baseline.
+- reconstructed the selected IEA 15-MW outer-blade segment;
+- generated the conformal leading-edge shield component;
+- built the blade + shield assembly;
+- checked geometric registration and fit;
+- reviewed the shield/blade coincidence in SolidWorks Interference Detection;
+- retained the shield as an independently controlled Rev-A part.
+
+The proposed later feathered/scarf termination redesign was **not completed** before project closeout, so the released Rev-A geometry remains the final controlled CAD baseline.
 
 ---
 
-## 3. Aerodynamic screening methodology
+## 3. CAD verification evidence
 
-The aerodynamic analysis was performed as a **differential outer-segment BEM correction** anchored to the project clean rated-power baseline:
+<p align="center">
+  <img src="images/cad_interference_check_actual.svg" alt="SolidWorks Interference Detection result" width="850">
+</p>
+
+<p align="center"><i>Actual SolidWorks Interference Detection screenshot. The reported condition is the intended coincident interface between PRT-1310 and PRT-1320 and was reviewed during assembly fit checking.</i></p>
+
+This verification was used as **CAD integration evidence**, not as structural qualification. Final adhesive peel, local debond, fatigue and rain-erosion behavior were outside the completed scope.
+
+---
+
+## 4. Aerodynamic screening methodology
+
+The rotor study used a **differential outer-segment BEM correction** anchored to the project clean rated-power baseline:
 
 [
 P_{total}=P_{baseline}+left(P_{segment,case}-P_{segment,clean}ight)
 ]
 
-with:
+Key rated-point model inputs included:
 
 - air density: 1.225 kg/m³;
-- rated-point wind speed: 10.59 m/s;
+- wind speed: 10.59 m/s;
 - rotor speed: 7.56 rpm;
 - three blades;
-- station-specific IEA outer-blade geometry;
-- public AeroDyn polar data;
+- public IEA outer-blade geometry;
+- station-specific AeroDyn polar data;
 - Prandtl hub/tip losses;
 - bounded induction factors;
-- relaxation-based fixed-point convergence.
-
-The project evolved through two main analysis generations.
+- relaxation-based convergence.
 
 ### Rev-A parametric screening
 
 The original controlled Rev-A model used:
 
 - erosion: **−5% (C_L), +50% (C_D)**;
-- shield state: prescribed **80% recovery of the sectional coefficient penalty**.
+- protection: prescribed **80% sectional coefficient-penalty recovery**.
 
-That model produced approximately:
+It produced approximately:
 
-- eroded rated power: **16.050 MW**;
-- EROSHIELD rated power: **16.174 MW**;
-- modeled recovered rated power: **124.48 kW**;
-- rotor-level recovery: **80.85%**;
-- AEP proxy recovered: **0.5828 GWh/year**.
+| Metric | Rev-A result |
+|---|---:|
+| Clean power | 16.204 MW |
+| Eroded power | ~16.050 MW |
+| EROSHIELD power | ~16.174 MW |
+| Modeled recovered rated power | **124.48 kW** |
+| Rotor-level recovery | **80.85%** |
+| Recovered AEP proxy | **0.5828 GWh/year** |
 
-These values are retained as **historical Rev-A screening outputs under explicit assumptions**, not as experimental validation.
+These remain **historical Rev-A screening results under explicit assumptions**. The AEP value is a rated-point proportional proxy, not a full wind-distribution/power-curve integration.
 
 ### V2 literature-informed screening
 
-The later V2 analysis replaced the forced “80% recovery” logic with independent erosion and LEP analogue branches so that recovery became an **output** of the BEM calculation.
-
-The seven aerodynamic states were:
+The later V2 analysis removed the forced 80% recovery outcome and independently crossed erosion states with LEP analogue penalties:
 
 - Clean
 - Erosion A1
@@ -122,11 +125,11 @@ The seven aerodynamic states were:
 - LEP chamfer analogue
 - LEP step analogue
 
-The LEP branches are **analogue sensitivity cases**. They do not represent direct measurements of the actual 2 mm EROSHIELD geometry.
+The tape/chamfer/step branches are **analogue sensitivity cases**, not measurements of the actual 2 mm EROSHIELD geometry.
 
 ---
 
-## 4. Final V2 rated-point results
+## 5. Final V2 rated-point results
 
 ![Rated-point power penalty](images/v2_power_penalty.svg)
 
@@ -139,10 +142,6 @@ The LEP branches are **analogue sensitivity cases**. They do not represent direc
 | LEP tape analogue | 16.179509 | −24.49 |
 | LEP chamfer analogue | 16.149004 | −55.00 |
 | LEP step analogue | 16.085062 | −118.94 |
-
-The main design finding is that **protection is not automatically beneficial**. Under mild erosion, a protection system with too much aerodynamic penalty can perform worse than simply leaving the mildly eroded blade untreated.
-
-Under moderate and severe erosion, lower-penalty protection analogues show much larger modeled benefits.
 
 ![Recovery screening matrix](images/v2_recovery_matrix.svg)
 
@@ -158,76 +157,52 @@ Under moderate and severe erosion, lower-penalty protection analogues show much 
 | B3 severe | Chamfer | +540.65 | 90.77% |
 | B3 severe | Step | +476.71 | 80.03% |
 
-This is the strongest engineering conclusion from the project:
+### Main design insight
 
-> **The value of leading-edge protection is condition-dependent. The protection penalty must be low enough relative to the erosion severity for the system to provide a net aerodynamic benefit.**
+> **Protection is condition-dependent. A protection system can be counterproductive under mild erosion if its own installation penalty is too high, while low-penalty protection can provide substantial modeled benefit under moderate/severe erosion.**
+
+This is the key engineering conclusion of EROSHIELD-15.
 
 ---
 
-## 5. Numerical audit
+## 6. Numerical audit
 
-The final V2 model was run using three angle-of-attack transfer windows:
+The V2 model was solved for three angle-of-attack transfer windows:
 
 - Nominal: ([0,4,9,13]^circ)
 - Wide: ([0,3,10,14]^circ)
 - Narrow: ([3,6,7,10]^circ)
 
-Across:
-
-- 3 transfer windows;
-- 7 aerodynamic states;
-- 12 outer-blade stations;
-
-the model solved **252 individual BEM station/case combinations**.
-
-### Numerical status
+Across 3 windows × 7 aerodynamic states × 12 stations:
 
 | Diagnostic | Result |
 |---|---:|
 | Converged solutions | **252 / 252** |
-| Maximum iterations used | **76 / 200** |
+| Maximum iterations | **76 / 200** |
 | Axial-induction clip flags | **21** |
 | Tangential-induction clip flags | **0** |
-| Overall convergence status | **PASS** |
-| Induction clipping status | **REVIEW REQUIRED** |
+| Convergence status | **PASS** |
+| Induction clipping | **REVIEW REQUIRED** |
 
-The clipping flags were not hidden. They remain a documented limitation because the solver uses bounded induction without a dedicated high-induction correction.
-
-The repository includes:
-
-- V2 screening source code;
-- Rev-A result CSV;
-- V2 nominal summary CSV;
-- V2 comparison CSV;
-- numerical audit record.
+The clipping flags are preserved as a numerical limitation because the model uses bounded induction without a dedicated high-induction correction.
 
 ---
 
-## 6. Span-placement study
+## 7. Span-placement decision
 
-A fixed-length **9.551 m protection window** was swept over the outer blade.
-
-Using the later station-specific IEA polars, the existing CAD location captured approximately:
+A fixed **9.551 m** protection window was swept across the outer blade. With the station-specific outer-blade polar model, the existing CAD location captured approximately:
 
 [
 oxed{99.98%}
 ]
 
-of the maximum screened recovered power among the tested fixed-length positions.
+of the maximum recovered power among the tested fixed-length candidates.
 
-The predicted improvement from moving the shield to the best screened location was only about:
-
-[
-0.034 	ext{kW}
-]
-
-so the engineering decision was to **retain the existing CAD span** rather than redesign the installation for a negligible modeled gain.
+The modeled benefit of relocating the shield was only about **0.034 kW**, so the engineering decision was to **retain the existing CAD span**.
 
 ---
 
-## 7. Mass and attachment screening
-
-The Rev-A concept-level estimates were:
+## 8. Mass and attachment screening
 
 | Quantity | Screening result |
 |---|---:|
@@ -239,109 +214,104 @@ The Rev-A concept-level estimates were:
 | Average centrifugal bond shear | ~0.167 kPa |
 | Factored average shear, FoS = 3 | ~0.500 kPa |
 
-The important conclusion was that **uniform average centrifugal shear is not the critical attachment problem**.
+The conclusion was **not** that the attachment was fully qualified. The result only showed that uniform average centrifugal shear was unlikely to be the dominant concept-level risk.
 
-The more important unresolved risks are:
+Higher-priority unresolved risks remain:
 
 - edge peel;
 - local debond initiation;
-- rain / particle impact;
 - cyclic blade flexure;
+- rain/particle impact;
 - thermal mismatch;
 - moisture ingress;
-- adhesive ageing and fatigue.
-
-These were intentionally left as future qualification work rather than presented as solved.
+- adhesive ageing/fatigue.
 
 ---
 
-## 8. CAD / assembly evidence
+## 9. TurboPLM requirements and traceability
 
-The CAD work was controlled around three primary objects:
+EROSHIELD-15 was managed as a small configuration-controlled product-development study in **TurboPLM**, not only as loose CAD and analysis files.
 
-- `PRT-1310` — IEA15MW Outer Blade Segment
-- `PRT-1320` — EROSHIELD Leading-Edge Shield
-- `ASM-1300` — EROSHIELD Outer-Blade Assembly
+<p align="center">
+  <img src="images/plm_requirements_actual.svg" alt="TurboPLM approved requirements" width="900">
+</p>
 
-A separate released shield component was important because the concept was intended to remain replaceable / removable rather than becoming an irreversible modification of the reference blade.
+<p align="center"><i>Actual TurboPLM requirements page showing the six approved Rev-A requirements.</i></p>
 
-The assembly was checked for geometric coincidence / interference before release.
+### Exact approved requirements
+
+| Requirement | Title | Type | Priority | Status |
+|---|---|---|---|---|
+| REQ-10001 | ERSOHIELD Leading-Edge Protection Concept | Functional | High | Approved |
+| REQ-10002 | Modeled Aerodynamic Loss Recovery | Functional | High | Approved |
+| REQ-10003 | Installed Shield Mass Limit | Performance | High | Approved |
+| REQ-10004 | Outer-Blade Protection Coverage | Functional | High | Approved |
+| REQ-10005 | Replaceable Protection Architecture | Functional | Medium | Approved |
+| REQ-10006 | Protection Span Placement Efficiency | Performance | Medium | Approved |
+
+**Release coverage:** 6 approved / 6 covered / 0 uncovered.
 
 ---
 
-## 9. PLM and configuration control
-
-EROSHIELD-15 was also used as a configuration-management exercise in **TurboPLM**, not only as a CAD / analysis project.
+## 10. PLM change-control release
 
 ![PLM traceability](images/plm_traceability.svg)
 
-### Controlled release objects
+The controlled workflow included:
 
-| ID | Object | Status |
-|---|---|---|
-| REF-0001 | IEA 15-MW Reference Blade | Controlled reference |
-| PRT-1310 | IEA15MW Outer Blade Segment | Rev A released |
-| PRT-1320 | EROSHIELD Leading-Edge Shield | Rev A released |
-| ASM-1300 | EROSHIELD Outer-Blade Assembly | Rev A released |
-| DOC-2000 | Source and License Record | Controlled |
-| DOC-2100 | Aerodynamic & Rotor Impact Analysis | Rev A |
-| ECR-10001 | Outer-Blade Leading-Edge Erosion Mitigation | Accepted |
-| ECN-10001 | Outer-Blade Leading-Edge Erosion Mitigation | Released |
+- `REF-0001` — IEA 15-MW Reference Blade
+- `PRT-1310` — IEA15MW Outer Blade Segment — **Rev A Released**
+- `PRT-1320` — EROSHIELD Leading-Edge Shield — **Rev A Released**
+- `ASM-1300` — EROSHIELD Outer-Blade Assembly — **Rev A Released**
+- `DOC-2000` — Source and License Record
+- `DOC-2100` — Aerodynamic & Rotor Impact Analysis — Rev A
+- `ECR-10001` — Outer-Blade Leading-Edge Erosion Mitigation — **Accepted**
+- `ECN-10001` — Outer-Blade Leading-Edge Erosion Mitigation — **Released**
 
-### PLM work completed
+<p align="center">
+  <img src="images/plm_ecn_released_actual.svg" alt="TurboPLM released ECN-10001" width="900">
+</p>
 
-- engineering BOM created for `ASM-1300`;
-- requirements linked to controlled product objects;
-- six requirements approved;
-- six requirements covered;
-- zero uncovered requirements;
-- ECR created and accepted;
-- ECN created and released;
-- Rev-A concept baseline released;
-- analysis evidence linked to the controlled configuration.
+<p align="center"><i>Actual TurboPLM ECN-10001 release page showing the three affected Rev-A parts and the released change notice.</i></p>
 
-The original TurboPLM database remains the authoritative record. GitHub mirrors the configuration logic and project evidence for portfolio use.
+The ECN release retained the Rev-A screening basis: **124.48 kW modeled rated-power recovery, 80.85% modeled recovery, 15.90 kg/blade installed-mass estimate and ~99.98% screened placement efficiency**. These are configuration-controlled historical Rev-A values, not experimental validation claims.
+
+The original TurboPLM database remains the authoritative PLM record; this GitHub repository mirrors the configuration logic and supporting evidence for portfolio review.
 
 ---
 
-## 10. CFD disposition
+## 11. CFD disposition
 
-A small SU2 branch was attempted for direct AF45 erosion-delta prediction.
+A lightweight SU2 branch was attempted for direct AF45 erosion-delta prediction. Some runs converged numerically but produced nonphysical force behavior, including negative drag.
 
-Some cases converged numerically but produced nonphysical force behavior, including negative drag. Those cases **failed physical-consistency checks** and were rejected.
+Those results were therefore **rejected** and are not used as validation evidence or headline project results.
 
-They are therefore:
-
-- not used for headline results;
-- not used as validation evidence;
-- explicitly documented in `rejected-cfd/`.
-
-This was an intentional engineering-quality decision: numerical convergence alone was not treated as proof of physical validity.
+This is documented in `rejected-cfd/`.
 
 ---
 
-## 11. What was intentionally not completed
+## 12. What was intentionally not completed
 
-The project is closed before production qualification.
+The project was closed before production qualification.
 
 Not completed:
 
-- Phase-12 feathered / scarf termination redesign;
+- Phase-12 feathered/scarf termination redesign;
 - geometry-specific CFD validation of the actual 2 mm shield;
 - wind-tunnel validation;
-- adhesive peel / fracture testing;
+- adhesive peel/fracture testing;
 - structural FEA of the final attachment;
 - rain-erosion qualification;
-- thermal / environmental ageing;
+- thermal/environmental ageing;
 - blade-flexure compatibility testing;
-- complete power-curve / wind-distribution AEP integration;
+- full power-curve/wind-distribution AEP integration;
 - manufacturing-process qualification.
 
 These are documented as **open validation gates**, not hidden gaps.
 
 ---
 
-## 12. Repository structure
+## 13. Repository structure
 
 ```text
 EROSHIELD-15/
@@ -367,6 +337,10 @@ EROSHIELD-15/
 ├── rejected-cfd/
 │   └── README.md
 ├── images/
+│   ├── cad_assembly_hero_actual.svg
+│   ├── cad_interference_check_actual.svg
+│   ├── plm_requirements_actual.svg
+│   ├── plm_ecn_released_actual.svg
 │   ├── geometry_summary.svg
 │   ├── project_workflow.svg
 │   ├── v2_power_penalty.svg
@@ -378,27 +352,27 @@ EROSHIELD-15/
 
 ---
 
-## 13. Tools demonstrated
+## 14. Skills demonstrated
 
-**CAD / mechanical design**
-- SolidWorks
-- assembly definition
-- conformal component design
-- fit / interference review
+**Mechanical design / CAD**
+- SolidWorks part and assembly modelling
+- conformal component concept development
+- assembly fit/interference review
+- controlled CAD object structure
 
 **Aerodynamics / numerical engineering**
 - GNU Octave
 - blade-element momentum modelling
 - public AeroDyn polar handling
-- numerical convergence diagnostics
 - sensitivity analysis
+- numerical convergence diagnostics
 
-**Engineering process**
-- requirements traceability
+**Engineering process / PLM**
+- requirements definition and traceability
 - eBOM
-- change control
-- ECR / ECN workflow
-- released configuration baseline
+- ECR/ECN change control
+- released Rev-A baseline
+- source/license traceability
 - evidence-based project closeout
 
 ---
@@ -409,16 +383,12 @@ EROSHIELD-15/
 oxed{	ext{Closed — preliminary engineering concept and screening study}}
 ]
 
-EROSHIELD-15 is intentionally preserved as a **traceable engineering development project** rather than being presented as a validated commercial product.
-
-See:
+EROSHIELD-15 is preserved as a **traceable engineering development project** rather than presented as a validated commercial product.
 
 - [Project closeout](PROJECT_CLOSEOUT.md)
 - [PLM / configuration control](plm/README.md)
 - [Third-party attribution](THIRD_PARTY_NOTICE.md)
 - [Rejected CFD branch](rejected-cfd/README.md)
-
----
 
 ### Attribution
 
