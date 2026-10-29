@@ -242,7 +242,7 @@ EROSHIELD-15 was managed as a small configuration-controlled product-development
 
 | Requirement | Title | Type | Priority | Status |
 |---|---|---|---|---|
-| REQ-10001 | ERSOHIELD Leading-Edge Protection Concept | Functional | High | Approved |
+| REQ-10001 | EROSHIELD Leading-Edge Protection Concept | Functional | High | Approved |
 | REQ-10002 | Modeled Aerodynamic Loss Recovery | Functional | High | Approved |
 | REQ-10003 | Installed Shield Mass Limit | Performance | High | Approved |
 | REQ-10004 | Outer-Blade Protection Coverage | Functional | High | Approved |
