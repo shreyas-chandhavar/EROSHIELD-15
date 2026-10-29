@@ -269,10 +269,22 @@ The controlled workflow included:
 - `ECN-10001` — Outer-Blade Leading-Edge Erosion Mitigation — **Released**
 
 <p align="center">
+  <img src="images/plm_ecn_change_impact_actual.svg" alt="TurboPLM ECN-10001 change-impact and document linkage" width="900">
+</p>
+
+<p align="center"><i>Actual TurboPLM ECN-10001 change-impact view showing the affected parts, where-used relationships and linked analysis document.</i></p>
+
+<p align="center">
+  <img src="images/plm_ecn_affected_parts_actual.svg" alt="TurboPLM ECN-10001 affected Rev-A parts" width="900">
+</p>
+
+<p align="center"><i>Actual TurboPLM affected-parts and release-impact view for ASM-1300, PRT-1310 and PRT-1320.</i></p>
+
+<p align="center">
   <img src="images/plm_ecn_released_actual.svg" alt="TurboPLM released ECN-10001" width="900">
 </p>
 
-<p align="center"><i>Actual TurboPLM ECN-10001 release page showing the three affected Rev-A parts and the released change notice.</i></p>
+<p align="center"><i>Actual TurboPLM ECN-10001 release page showing the released change notice and Rev-A affected parts.</i></p>
 
 The ECN release retained the Rev-A screening basis: **124.48 kW modeled rated-power recovery, 80.85% modeled recovery, 15.90 kg/blade installed-mass estimate and ~99.98% screened placement efficiency**. These are configuration-controlled historical Rev-A values, not experimental validation claims.
 
